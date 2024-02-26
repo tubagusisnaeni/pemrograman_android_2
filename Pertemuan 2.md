@@ -1,3 +1,7 @@
+
+![image](images/flutter.png)
+
+
 # Pertemuan 2 : Pengenalan Dasar Flutter
 ## 2.1 Pengertian Flutter
 Flutter adalah kerangka pengembangan perangkat lunak open-source yang dikembangkan oleh Google. Dengan menggunakan Flutter, Anda dapat membuat aplikasi yang indah dan responsif untuk berbagai platform, termasuk iOS, Android, dan web, dengan menggunakan satu basis kode sumber.
