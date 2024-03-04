@@ -112,4 +112,14 @@ Anda dapat menyesuaikan perilaku aplikasi berdasarkan platform dengan menggunaka
       // Perilaku khusus untuk Android
     }
 
+## 4. Adaptive Icons:
+Flutter menyediakan widget AdaptiveIcon yang memungkinkan Anda menampilkan ikon yang sesuai dengan platform saat aplikasi dijalankan pada perangkat yang berbeda.
 
+## 5. Adaptive Theme:
+Anda dapat mengatur tema aplikasi untuk beradaptasi dengan tema platform.
+
+    theme: ThemeData(
+      platform: TargetPlatform.iOS, // Sesuaikan dengan platform yang diinginkan
+    ),
+
+Melalui fitur-fitur ini, Flutter memungkinkan pengembang untuk membuat aplikasi yang dapat beradaptasi dengan baik di berbagai platform tanpa harus menulis kode UI yang terpisah untuk setiap platformnya. Ini mempermudah pengembangan lintas platform dan meminimalkan upaya untuk mencapai konsistensi UI di seluruh ekosistem.
