@@ -1,4 +1,5 @@
-# 1. Orientation Builder
+# Membuat Adaptive UI
+## 1. Orientation Builder
 
 OrientationBuilder adalah widget Flutter yang memungkinkan Anda membangun UI yang berubah berdasarkan orientasi perangkat (landscape atau portrait). Widget ini memberikan cara yang mudah untuk merespons perubahan orientasi dan mengatur tata letak UI dengan benar sesuai dengan orientasi saat ini.
 
@@ -118,7 +119,7 @@ Anda bisa menyesuaikan logika di dalam fungsi builder sesuai kebutuhan proyek An
     }
 
 
-# 2. Adaptive Platform
+## 2. Adaptive Platform
 
 
 Adaptive platform dalam konteks Flutter merujuk pada kemampuan framework ini untuk membuat antarmuka pengguna (UI) yang dapat beradaptasi dan memberikan pengalaman yang konsisten di berbagai platform, seperti iOS, Android, web, dan desktop. Flutter memfasilitasi pengembangan aplikasi yang dapat berjalan di berbagai platform dengan menggunakan kode Dart tunggal.
