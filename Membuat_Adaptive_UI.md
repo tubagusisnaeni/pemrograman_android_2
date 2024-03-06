@@ -1,125 +1,200 @@
-# Orientation Builder
+# 1. Orientation Builder
 
 OrientationBuilder adalah widget Flutter yang memungkinkan Anda membangun UI yang berubah berdasarkan orientasi perangkat (landscape atau portrait). Widget ini memberikan cara yang mudah untuk merespons perubahan orientasi dan mengatur tata letak UI dengan benar sesuai dengan orientasi saat ini.
 
 Berikut adalah contoh penggunaan OrientationBuilder:
 
-    import 'package:flutter/material.dart';
+- Buat file baru **adaptip.dart**, ketik kode berikut :
+> Contoh 1:
+
+        import 'package:flutter/material.dart';
     
-    void main() {
-      runApp(MyApp());
-    }
-    
-    class MyApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return MaterialApp(
-          home: MyHomePage(),
-        );
-      }
-    }
-    
-    class MyHomePage extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text('OrientationBuilder Example'),
-          ),
-          body: OrientationBuilder(
-            builder: (BuildContext context, Orientation orientation) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(
-                    orientation == Orientation.portrait
-                        ? Icons.portrait
-                        : Icons.landscape,
-                    size: 100.0,
+        class Adaptip extends StatefulWidget{
+          const Adaptip({super.key});
+        
+          @override
+          State<StatefulWidget> createState()=> _AdaptipState();
+        }
+        class _AdaptipState extends State<Adaptip>{
+          @override
+            Widget build(BuildContext context)
+            {
+              return Scaffold(
+                body: Center(
+                  child: (MediaQuery.of(context).orientation == Orientation.portrait)?
+                  Container(
+                    height: 300,
+                    width: 300,
+                    color: Colors.amber,
+                    child: Image.asset('assets/unival.png',
+                      fit: BoxFit.fill,),
+                  ):
+                  Container(
+                    height: 300,
+                    width: 600,
+                    color: Colors.blue,
+                    child: Image.asset('assets/unival.png',
+                      fit: BoxFit.fitHeight,),
                   ),
-                  SizedBox(height: 20.0),
-                  Text(
-                    orientation == Orientation.portrait
-                        ? 'Portrait Mode'
-                        : 'Landscape Mode',
-                    style: TextStyle(fontSize: 20.0),
-                  ),
-                ],
+                ),
               );
-            },
-          ),
-        );
-      }
-    }
+            }
+        }
 
 
-Pada contoh di atas, kita menggunakan OrientationBuilder di dalam widget Column. Saat orientasi perangkat berubah antara landscape dan portrait, widget tersebut akan membangun ulang UI di dalamnya. Dalam contoh ini, kita menampilkan ikon dan teks berdasarkan orientasi perangkat.
+
+Pada contoh di atas, kita menggunakan OrientationBuilder di dalam widget Center. Saat orientasi perangkat berubah antara landscape dan portrait, widget tersebut akan membangun ulang UI di dalamnya. Dalam contoh ini, kita menampilkan sebuah logo Unival di dalam kotak persegi berwarna amber saat device kita dalam mode potrait, begitu mode device menjadi landscape maka tampilan UI berubah menjadi logo unival di dalam kotak persegi panjang berwarna biru.
 
 Anda bisa menyesuaikan logika di dalam fungsi builder sesuai kebutuhan proyek Anda. OrientationBuilder memberikan kenyamanan dalam menanggapi perubahan orientasi, dan Anda dapat membangun tata letak yang berbeda, menyesuaikan margin, atau menampilkan widget yang berbeda berdasarkan kondisi orientasi.
 
-# Adaptive Platform
+> Contoh 2 :
+
+    import 'package:flutter/material.dart';
+    
+    class Adaptip extends StatefulWidget {
+      const Adaptip({Key? key}) : super(key: key);
+    
+      @override
+      State<StatefulWidget> createState() => _AdaptipState();
+    }
+    
+    class _AdaptipState extends State<Adaptip> {
+      @override
+      Widget build(BuildContext context) {
+        return OrientationBuilder(
+          builder: (context, orientation) {
+            return orientation == Orientation.portrait
+                ? WidgetPortrait()
+                : WidgetLandscape();
+          },
+        );
+      }
+    }
+    
+    class WidgetPortrait extends StatelessWidget {
+      const WidgetPortrait({
+        Key? key,
+      }) : super(key: key);
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: Center(
+            child: Container(
+              height: 300,
+              width: 300,
+              color: Colors.amber,
+              child: Image.asset(
+                'assets/unival.png',
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        );
+      }
+    }
+    
+    class WidgetLandscape extends StatelessWidget {
+      const WidgetLandscape({
+        Key? key,
+      }) : super(key: key);
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: Center(
+            child: Container(
+              height: 300,
+              width: 600,
+              color: Colors.blue,
+              child: Image.asset(
+                'assets/unival.png',
+                fit: BoxFit.fitHeight,
+              ),
+            ),
+          ),
+        );
+      }
+    }
+
+
+# 2. Adaptive Platform
 
 
 Adaptive platform dalam konteks Flutter merujuk pada kemampuan framework ini untuk membuat antarmuka pengguna (UI) yang dapat beradaptasi dan memberikan pengalaman yang konsisten di berbagai platform, seperti iOS, Android, web, dan desktop. Flutter memfasilitasi pengembangan aplikasi yang dapat berjalan di berbagai platform dengan menggunakan kode Dart tunggal.
 
-Berikut adalah beberapa contoh implementasi Adaptive Platform di Flutter:
+Flutter menyediakan widget yang dapat beradaptasi dengan gaya visual platform tempat aplikasi dijalankan. Sebagai contoh, kita gunakan package get.dart untuk mengambil nilai platform device. Ketika kita buka aplikasi menggunakan Device Android maka tampilan yang berlaku adalah kotak berwarna hitam. Sedangkan menggunakan Device IOS yang tampil adalah kotak berwarna orange.
 
-## 1. Platform-aware Widgets:
-Flutter menyediakan widget yang dapat beradaptasi dengan gaya visual platform tempat aplikasi dijalankan. Sebagai contoh, CupertinoButton adalah widget yang dirancang untuk terlihat dan berperilaku seperti tombol di iOS, sedangkan ElevatedButton sesuai dengan pedoman Material Design di Android.
+> Ikuti Langkah pada Web berikut untuk menambahkan dependency Get :
+  https://pub.dev/packages/get/install
+
+
 
     import 'package:flutter/material.dart';
-    import 'package:flutter/cupertino.dart';
+    import 'package:get/get.dart';
     
-    class MyAdaptiveButton extends StatelessWidget {
+    class Adaptip extends StatefulWidget {
+      const Adaptip({Key? key}) : super(key: key);
+    
+      @override
+      State<StatefulWidget> createState() => _AdaptipState();
+    }
+    
+    class _AdaptipState extends State<Adaptip> {
       @override
       Widget build(BuildContext context) {
-        return (Theme.of(context).platform == TargetPlatform.iOS)
-            ? CupertinoButton(
-                child: Text('Tap me'),
-                onPressed: () {
-                  // Handle button tap on iOS
-                },
-              )
-            : ElevatedButton(
-                onPressed: () {
-                  // Handle button tap on Android
-                },
-                child: Text('Tap me'),
-              );
+        return Scaffold(
+          body: Center(
+          child: (GetPlatform.isAndroid)
+                ? WidgetAndroid()
+                : WidgetIOS(),
+          ),
+        );
       }
     }
-
-
-## 2. Platform Channels:
-Flutter memungkinkan komunikasi antara kode Dart dan kode platform asli melalui platform channels. Ini memungkinkan pengembang untuk mengakses fitur atau fungsi platform-spesifik jika diperlukan.
-
-
-    import 'package:flutter/services.dart';
     
-    // Panggil metode platform-spesifik dari kode Dart
-    void platformSpecificMethod() {
-      const platform = MethodChannel('my_channel');
-      platform.invokeMethod('myMethod');
+    class WidgetAndroid extends StatelessWidget {
+      const WidgetAndroid({
+        Key? key,
+      }) : super(key: key);
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: Center(
+            child: Container(
+              height: 300,
+              width: 300,
+              color: Colors.black,
+              child: Image.asset(
+                'assets/unival.png',
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        );
+      }
     }
-
-
-## 3. Platform Switching:
-Anda dapat menyesuaikan perilaku aplikasi berdasarkan platform dengan menggunakan logika Platform.isX di Dart.
-
-    if (Platform.isIOS) {
-      // Perilaku khusus untuk iOS
-    } else if (Platform.isAndroid) {
-      // Perilaku khusus untuk Android
+    
+    class WidgetIOS extends StatelessWidget {
+      const WidgetIOS({
+        Key? key,
+      }) : super(key: key);
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: Center(
+            child: Container(
+              height: 300,
+              width: 300,
+              color: Colors.orange,
+              child: Image.asset(
+                'assets/unival.png',
+                fit: BoxFit.fitHeight,
+              ),
+            ),
+          ),
+        );
+      }
     }
-
-## 4. Adaptive Icons:
-Flutter menyediakan widget AdaptiveIcon yang memungkinkan Anda menampilkan ikon yang sesuai dengan platform saat aplikasi dijalankan pada perangkat yang berbeda.
-
-## 5. Adaptive Theme:
-Anda dapat mengatur tema aplikasi untuk beradaptasi dengan tema platform.
-
-    theme: ThemeData(
-      platform: TargetPlatform.iOS, // Sesuaikan dengan platform yang diinginkan
-    ),
-
-Melalui fitur-fitur ini, Flutter memungkinkan pengembang untuk membuat aplikasi yang dapat beradaptasi dengan baik di berbagai platform tanpa harus menulis kode UI yang terpisah untuk setiap platformnya. Ini mempermudah pengembangan lintas platform dan meminimalkan upaya untuk mencapai konsistensi UI di seluruh ekosistem.
