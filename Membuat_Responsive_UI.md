@@ -46,6 +46,9 @@ Berikut adalah contoh penggunaan media query dalam Flutter:
 
 Dalam contoh di atas, MediaQuery.of(context) digunakan untuk mendapatkan objek MediaQueryData, yang menyediakan informasi tentang karakteristik layar seperti size, orientation, dan lainnya. Dalam hal ini, mediaQuery.size.width digunakan untuk mengatur lebar kontainer menjadi 80% dari lebar layar.
 
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=g-lFPCNEilQ)
+
+----------------------------------------
 
 # Fleksibel
 
@@ -107,7 +110,9 @@ Pada contoh di atas, Flexible digunakan di antara dua container. Container yang 
 
 Anda dapat menyesuaikan nilai flex sesuai dengan seberapa banyak ruang yang ingin Anda berikan pada masing-masing widget flexible. Semakin besar nilai flex, semakin banyak ruang yang akan diambil oleh widget tersebut. Jika semua widget dalam satu baris memiliki nilai flex yang sama, mereka akan mendapatkan ruang yang sama secara proporsional.
 
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=djE3IZ1MiN0)
 
+----------------------------------------
 
 # Expanded
 
@@ -169,6 +174,10 @@ Pada contoh di atas, Expanded digunakan di antara dua container. Container yang 
 Anda dapat menggunakan Expanded baik di dalam Row, Column, atau Flex untuk memberikan fleksibilitas pada tata letak Anda, dan seiring dengan widget-widget lain seperti Flexible, Spacer, dan sebagainya, Anda dapat membuat tata letak yang responsif dan dinamis.
 
 
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=4rWPPzBwgOI)
+
+----------------------------------------
+
 
 # Fitted Box
 
@@ -225,6 +234,11 @@ Pada contoh di atas, kita menggunakan FittedBox di dalam suatu Container dengan 
 **BoxFit.fitWidth:** Mengecilkan atau memperbesar gambar agar lebar sesuai dengan lebar ruang yang tersedia tanpa merusak aspek rasio.
 **BoxFit.fitHeight:** Mengecilkan atau memperbesar gambar agar tinggi sesuai dengan tinggi ruang yang tersedia tanpa merusak aspek rasio.
 Anda bisa memilih nilai yang sesuai dengan kebutuhan tata letak dan desain aplikasi Anda.
+
+
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=fIM_wyd0Vhg)
+
+----------------------------------------
 
 
 
@@ -302,6 +316,10 @@ Pada contoh di atas, kita menggunakan Wrap untuk mengelompokkan beberapa Chip da
 Wrap memungkinkan Anda membuat tata letak yang responsif dan dinamis, terutama ketika jumlah dan ukuran widget anak dapat bervariasi.
 
 
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=__iT2-ntGpY)
+
+----------------------------------------
+
 
 # Fitur GetX
 
@@ -348,6 +366,12 @@ Contoh penggunaan Get.width dan Get.height:
 
 
 Dalam contoh di atas, Get.width digunakan untuk mendapatkan lebar layar dan kemudian digunakan untuk mengatur lebar container menjadi 80% dari lebar layar. Demikian pula, Get.height digunakan untuk mendapatkan tinggi layar dan digunakan untuk mengatur tinggi container menjadi 50% dari tinggi layar. Ini memungkinkan penyesuaian ukuran widget dengan mudah berdasarkan ukuran layar yang berbeda.
+
+
+
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=H2C78a5FLRk&t=120s)
+
+----------------------------------------
 
 
 
@@ -411,9 +435,14 @@ Pentingnya LayoutBuilder terletak pada kemampuannya untuk membuat widget yang re
 
 
 
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=c9RHNPxItV4)
+
+----------------------------------------
 
 
-# COnstrained Box
+
+
+# Constrained Box
 
 
 ConstrainedBox adalah widget Flutter yang memungkinkan Anda menetapkan batasan (constraints) tertentu pada widget anaknya. Dengan menggunakan ConstrainedBox, Anda dapat mengatur batasan lebar, tinggi, atau kedua-duanya untuk mempengaruhi tata letak dan ukuran widget anak.
@@ -469,3 +498,8 @@ Berikut adalah contoh penggunaan ConstrainedBox:
 Dalam contoh ini, ConstrainedBox digunakan untuk mengatur batasan lebar maksimum (maxWidth) dan tinggi maksimum (maxHeight) dari container. Sebagai hasilnya, kontennya tidak akan melebihi batasan yang ditetapkan.
 
 Anda dapat menyesuaikan BoxConstraints sesuai kebutuhan proyek Anda, dan ConstrainedBox akan memastikan bahwa batasan tersebut diterapkan pada widget anaknya. Ini berguna ketika Anda ingin memberikan batasan pada ukuran widget agar sesuai dengan kebutuhan desain atau tata letak tertentu.
+
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=YmPTTkCIAPg)
+
+----------------------------------------
+
