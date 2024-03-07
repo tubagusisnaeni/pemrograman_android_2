@@ -119,6 +119,11 @@ Anda bisa menyesuaikan logika di dalam fungsi builder sesuai kebutuhan proyek An
     }
 
 
+
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=JWnJCW4o94E)
+
+----------------------------------------
+
 ## 2. Adaptive Platform
 
 
@@ -199,5 +204,10 @@ Flutter menyediakan widget yang dapat beradaptasi dengan gaya visual platform te
         );
       }
     }
+
+> Lihat Tutorial : [Watch this Video](https://www.youtube.com/watch?v=atf2kYKSfSY)
+
+----------------------------------------
+
 
 # LATIHAN :
